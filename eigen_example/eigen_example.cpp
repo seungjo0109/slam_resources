@@ -33,13 +33,15 @@ int main() {
             << std::endl << std::endl;
 
   /* Initialize a 2x2 matrix with random values */
-  Eigen::MatrixXd random = Eigen::MatrixXd::Random(2, 2);
+  Eigen::Matrix<double, 2, 2> random = Eigen::Matrix<double, 2, 2>::Random();
+  // Eigen::Matrix2d random = Eigen::Matrix2d::Random();  // Equivalent
   std::cout << "random(2x2) = \n"
             << random
             << std::endl << std::endl;
 
   /* Initialize a 2x2 matrix with zeros */
-  Eigen::MatrixXd zeros = Eigen::MatrixXd::Zero(2, 2);
+  Eigen::Matrix2d zeros = Eigen::Matrix2d::Zero();
+  // Eigen::MatrixXd zeros = Eigen::MatrixXd::Zero(2, 2);   // Equivalent
   std::cout << "zeros(2x2) = \n"
             << zeros
             << std::endl << std::endl;
@@ -86,7 +88,7 @@ int main() {
             << x
             << std::endl << std::endl;
   std::cout << "Error: matrix2 * x - b = \n"
-            << matrix2 * x - b
+            << (matrix2 * x - b).norm()
             << std::endl << std::endl;
 
   /* Eigenvalues and eigenvectors */
