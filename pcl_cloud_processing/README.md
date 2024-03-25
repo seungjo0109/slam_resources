@@ -3,6 +3,7 @@
 
 ### Examples
 * downsamping
+* passthrough
 
 ## 1. Pre-requisite
 * [PCL](https://github.com/PointCloudLibrary/pcl)
@@ -17,5 +18,6 @@ make
 ## 3. Run
 ```
 ./downsamping
+./passthrough
 ```
 

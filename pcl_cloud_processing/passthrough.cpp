@@ -56,10 +56,6 @@ int main() {
   pass_through.setNegative(false);
   pass_through.filter(*positive_filtered);
 
-  /* Print the number of points in the filtered point cloud. */
-  spdlog::info("Cloud({}) -> CloudFiltered({})", cloud->size(),
-                                                 negative_filtered->size());
-
   /* Change the color of the filtered points. */
   for (auto& point: negative_filtered->points) {
     point.r = 255;
