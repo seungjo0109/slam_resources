@@ -26,6 +26,8 @@ add_definitions(${PCL_DEFINITIONS})
 add_executable(downsampling downsampling.cpp)
 target_link_libraries(downsampling ${PCL_LIBRARIES})
 
+add_executable(passthrough passthrough.cpp)
+target_link_libraries(passthrough ${PCL_LIBRARIES})
 
 
 

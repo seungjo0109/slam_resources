@@ -48,17 +48,14 @@ int main() {
   /* Downsample the point cloud. */
   pcl::VoxelGrid<pcl::PointXYZRGB> voxel_grid;
   voxel_grid.setInputCloud(cloud);
-  voxel_grid.setLeafSize(0.1f,
-                         0.1f,
-                         0.1f);
+  voxel_grid.setLeafSize(0.5f,
+                         0.5f,
+                         0.5f);
   voxel_grid.filter(*cloud_downsampled);
   
   /* Print the number of points in the downsampled point cloud. */
   spdlog::info("Cloud({}) -> CloudDownsampled({})", cloud->size(),
                                                     cloud_downsampled->size());
-  spdlog::info("LeafSize: {}, {}, {}", voxel_grid.getLeafSize().x,
-                                      voxel_grid.getLeafSize().y,
-                                      voxel_grid.getLeafSize().z);
   
   /* Change the color of the downsampled points. */
   for (auto& point: cloud_downsampled->points) {
